@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 /* montserrat-regular - latin */
 @font-face {
   font-family: "Montserrat";
@@ -81,6 +74,7 @@ img {
 .link {
   text-decoration: none;
   display: block;
+  cursor: pointer;
 }
 .list {
   list-style: none;
@@ -107,6 +101,8 @@ img {
   padding-bottom: 230px;
 }
 .banner {
+  background-image: -o-linear-gradient(bottom, #fce38ae6, #f38181e6),
+    url(../img/banner/banner.png);
   background-image: -webkit-gradient(
       linear,
       left bottom,
@@ -114,8 +110,6 @@ img {
       from(#fce38ae6),
       to(#f38181e6)
     ),
-    url(../img/banner/banner.png);
-  background-image: -o-linear-gradient(bottom, #fce38ae6, #f38181e6),
     url(../img/banner/banner.png);
   background-image: linear-gradient(to top, #fce38ae6, #f38181e6),
     url(../img/banner/banner.png);
@@ -147,7 +141,7 @@ img {
   transition: all 200ms linear;
   color: #fce38a;
 }
-.navigation-list {
+.navigation-wrapper {
   width: 618px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,13 +149,45 @@ img {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
-.navigation-icon {
+.navigation-list {
+  width: 490px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.navigation-list__item {
+  position: relative;
+}
+.navigation-list__item-link {
+  font-family: var(--first-font);
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: #ffffff;
+}
+.control-list {
+  width: 98px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.control-icon {
   width: 18px;
   height: 18px;
   fill: #ffffff;
 }
-.navigation-list__item:not(:nth-last-child(-n + 2))::after {
+.navigation-list__item-link::after {
   content: "";
   display: block;
   width: 100%;
@@ -170,8 +196,9 @@ img {
   margin-top: 10px;
   visibility: hidden;
   opacity: 0;
+  position: absolute;
 }
-.navigation-list__item:hover.navigation-list__item::after {
+.navigation-list__item:hover .navigation-list__item-link::after {
   -webkit-transition: all 200ms linear;
   -o-transition: all 200ms linear;
   transition: all 200ms linear;
@@ -184,20 +211,22 @@ img {
   transition: all 200ms linear;
   color: #fce38a;
 }
-.navigation-list__item-link:hover .navigation-icon {
+.control-list__item-link:hover .control-icon {
   -webkit-transition: all 200ms linear;
   -o-transition: all 200ms linear;
   transition: all 200ms linear;
   fill: #fce38a;
 }
-.navigation-list__item-link {
-  font-family: var(--first-font);
-  font-size: 0.875rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  line-height: 1.2;
-  color: #ffffff;
+.search-btn:hover .control-icon {
+  -webkit-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+  fill: #fce38a;
 }
+.search-btn {
+  background-color: #00000000;
+}
+
 .above-title {
   margin: 0 auto;
   text-align: center;
@@ -356,6 +385,7 @@ img {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-image: -o-linear-gradient(bottom, #fce38ae6, #f38181e6);
   background-image: -webkit-gradient(
     linear,
     left bottom,
@@ -363,7 +393,6 @@ img {
     from(#fce38ae6),
     to(#f38181e6)
   );
-  background-image: -o-linear-gradient(bottom, #fce38ae6, #f38181e6);
   background-image: linear-gradient(to top, #fce38ae6, #f38181e6);
   visibility: hidden;
   opacity: 0;
