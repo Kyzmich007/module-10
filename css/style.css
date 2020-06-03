@@ -561,6 +561,17 @@ img {
   (-o-min-device-pixel-ratio: 2/1),
   (min-resolution: 192dpi) {
   .banner {
-    background-image: url(../img/banner/banner@2x.png);
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(#fce38ae6),
+        to(#f38181e6)
+      ),
+      url(../img/banner/banner@2x.png);
+    background-image: -o-linear-gradient(bottom, #fce38ae6, #f38181e6),
+      url(../img/banner/banner@2x.png);
+    background-image: linear-gradient(to top, #fce38ae6, #f38181e6),
+      url(../img/banner/banner@2x.png);
   }
 }
